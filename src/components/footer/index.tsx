@@ -6,7 +6,7 @@ export default function Footer() {
 
   return (
     <div className="bg-[#232222] w-full">
-      <div className="max-w-6xl p-6 mx-auto w-full flex flex-col justify-center md:items-start items-center">
+      <div className="max-w-6xl p-6 mx-auto w-full flex flex-col justify-center lg:items-start items-center">
         <div className="mt-[4.375rem] flex items-center">
           <svg
             width="49"
@@ -24,7 +24,7 @@ export default function Footer() {
             Lorem Ipsum
           </h1>
         </div>
-        <ul className="flex md:flex-row flex-col gap-10 text-xl md:ml-[3.875rem] mt-8">
+        <ul className="flex lg:flex-row flex-col gap-10 text-xl lg:ml-[3.875rem] mt-8">
           <li className="text-[#ff4c00] hover:text-[#ffffff] transition-all duration-300">
             <Link className={``} href={routes.home}>
               Home
@@ -36,9 +36,9 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
-        <div className="text-center md:text-start w-full mt-[4.375rem] md:ml-[3.875rem] mb-4 text-[#FFFFFF] flex md:flex-row flex-col items-center justify-between">
+        <div className="text-center lg:text-start w-full mt-[4.375rem] lg:ml-[3.875rem] mb-4 text-[#FFFFFF] flex lg:flex-row flex-col items-center justify-between">
           <p>@{currentYear} Miracle Tree Demo. All Rights Reserved</p>
-          <ul className="flex gap-10 mt-3 md:mt-0">
+          <ul className="flex gap-10 mt-3 lg:mt-0">
             <li className="hover:text-[#ff4c00] transition-all duration-300">
               <Link className={``} href={routes.home}>
                 Terms of Business

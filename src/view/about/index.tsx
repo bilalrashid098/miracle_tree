@@ -44,7 +44,7 @@ export default function AboutView() {
         <div className="mt-[7rem] flex flex-wrap">
           {data?.map((item: FeatureSectionProps, index: number) => {
             return (
-              <div className="w-full md:w-1/4 md:px-2" key={index}>
+              <div className="w-full md:w-1/2 lg:w-1/4 md:px-2" key={index}>
                 <FeatureSection item={item} />
               </div>
             );

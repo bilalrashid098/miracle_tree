@@ -35,7 +35,7 @@ export default function Header() {
       }`}
     >
       <div className="flex items-center justify-between p-6 max-w-6xl mx-auto">
-        <div className="flex items-center">
+        <Link href={routes.home} className="flex items-center">
           <svg
             width="49"
             height="40"
@@ -55,7 +55,7 @@ export default function Header() {
           >
             Lorem Ipsum
           </h1>
-        </div>
+        </Link>
         <div>
           <ul className="flex gap-10 text-xl">
             <li className="hover:text-[#ff4c00] transition-all duration-300">
