@@ -31,7 +31,7 @@ export default function AboutView() {
       <div className="max-w-6xl mx-auto p-6 py-[7rem]">
         <div className="text-center">
           <div className="md:w-1/2 mx-auto text-2xl font-semibold mb-8">
-            We believe growth starts with collaboration. Seriously, we're in
+            We believe growth starts with collaboration. Seriously, we are in
             this together.
           </div>
           <div className="md:w-4/5 mx-auto text-xl mb-4">

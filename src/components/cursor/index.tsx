@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  const [isHovering] = useState(false);
 
   useEffect(() => {
     const updateCursor = (e: MouseEvent) => {
