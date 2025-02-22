@@ -59,9 +59,7 @@ export default function HomeView({ posts }: { posts: Post[] }) {
         <div className="flex flex-wrap w-full md:mx-[-0.5rem] md:w-[calc(100%+0.5rem)]">
           {posts.slice(0, visiblePosts).map((post, index: number) => {
             const imageSrc = images[index % images.length];
-            const fullView = !isMobile
-              ? Math.floor(index / 12) % 2 !== 0
-              : false;
+            const fullView = Math.floor(index / 12) % 2 !== 0;
             return (
               <Card
                 key={post.id}

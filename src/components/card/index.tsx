@@ -7,18 +7,18 @@ export default function Card({ post, image, fullView }: CardProps) {
   return (
     <div className={`w-full ${fullView ? "sm:md:w-1/3" : ""} mb-4 md:px-2`}>
       <div
-        className={`border-2 border-[#ADADAD] h-full flex rounded-xl p-4 ${
+        className={`border-2 border-[#ADADAD] h-full sm:flex rounded-xl p-4 ${
           !fullView ? "flex-row" : "flex-col"
         } transition-all duration-300 ease-in-out`}
       >
         <Image
           className={`${
-            !fullView ? "aspect-square w-[30%]" : "aspect-[3/2] w-full"
+            !fullView ? "sm:aspect-square sm:w-[30%]" : "aspect-[3/2] w-full"
           } object-cover rounded-lg`}
           src={image}
           alt={post.title}
         />
-        <div className={`flex flex-col grow ${!fullView ? "p-6" : "py-6"}`}>
+        <div className={`flex flex-col grow py-6 ${!fullView ? "sm:p-6" : "sm:py-6"}`}>
           <h2 className="text-2xl md:text-4xl font-bold mb-3">
             <Link href={`/post/${post.id}`} className="capitalize hover:none">
               {post.title}
