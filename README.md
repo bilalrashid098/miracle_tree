@@ -1,40 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-## Getting Started
+# Miracle Tree Test
 
-First, run the development server:
+This is a simple Next.js website that lists posts and their details using data from JSONPlaceholder API. The website consists of three main pages:
 
+1. **Home** - Displays a list of posts.
+2. **Detail** - Shows the details of a selected post.
+3. **About** - Provides information about the company.
+
+## Project Setup
+
+To get started with the project, follow the steps below:
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+Navigate to the project directory and install the required dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### 3. Run the development server
+Start the development server:
+```bash
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The application will be available at `http://localhost:3000`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev`: Starts the development server.
+- `npm run build`: Builds the project for production.
+- `npm run start`: Starts the production server.
+- `npm run lint`: Lints the codebase using ESLint.
 
-## Learn More
+## Dependencies
 
-To learn more about Next.js, take a look at the following resources:
+- `next`: The Next.js framework for React.
+- `react`: JavaScript library for building user interfaces.
+- `react-device-detect`: For detecting device type and features.
+- `tailwindcss`: Utility-first CSS framework.
+- `typescript`: TypeScript support for type-safe development.
+- `eslint`: Linter for code quality.
+- `postcss`: For processing CSS files.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- **Syed Bilal Rashid**
