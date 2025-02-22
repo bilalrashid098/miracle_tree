@@ -12,3 +12,9 @@ export interface CardProps {
   image: StaticImageData;
   fullView: boolean;
 }
+
+export interface FeatureSectionProps {
+  title: string;
+  description: string;
+  image: StaticImageData;
+}

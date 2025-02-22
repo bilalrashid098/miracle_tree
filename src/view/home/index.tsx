@@ -20,6 +20,7 @@ export default function HomeView({ posts }: { posts: Post[] }) {
       <div className="w-full h-[85vh] pt-[88px] bg-[#F1F1F1] flex flex-col justify-center">
         <div className="absolute w-full h-[calc(85vh-88px)] top-0 left-0 z-[1] opacity-5 flex justify-end">
           <svg
+            className="w-auto h-full"
             width="49"
             height="40"
             viewBox="0 0 49 40"
@@ -33,15 +34,19 @@ export default function HomeView({ posts }: { posts: Post[] }) {
           </svg>
         </div>
         <div className="max-w-6xl mx-auto p-6 w-full z-[2]">
-          <div className="text-5xl font-semibold text-[#ff4c00] mb-6">DEMO TEST</div>
+          <div className="text-5xl font-semibold text-[#ff4c00] mb-6">
+            DEMO TEST
+          </div>
           <div className="text-8xl font-bold mb-6">
             THE MIRACLE <br /> TREE
           </div>
-          <div className="text-4xl font-semibold text-[#ff4c00]">SYED BILAL RASHID</div>
+          <div className="text-4xl font-semibold text-[#ff4c00]">
+            SYED BILAL RASHID
+          </div>
         </div>
       </div>
       <div className="max-w-6xl mx-auto p-6">
-        <h1 className="text-4xl font-bold mb-6">Blog Posts</h1>
+        <h1 className="text-4xl font-bold pb-3 my-8">Blog Posts</h1>
         <div className="flex flex-wrap w-full mx-[-0.5rem] w-[calc(100%+0.5rem)]">
           {posts.map((post, index: number) => {
             const imageSrc = images[index % images.length];
