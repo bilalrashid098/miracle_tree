@@ -7,7 +7,8 @@
   --foreground: #171717;
 }
 
-html, body {
+html,
+body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-aldrich-sans), Helvetica, sans-serif;
@@ -17,3 +18,8 @@ html, body {
   font-family: var(--font-aldrich-sans), Helvetica, sans-serif;
 }
 
+@media (max-width: 768px) {
+  html, body {
+    font-size: 14px;
+  }
+}

@@ -4,7 +4,7 @@
 }
 
 .card:hover .cardImage {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .cardImage {
@@ -34,4 +34,14 @@
   padding: 2rem 1rem;
   z-index: 2;
   color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .cardImage {
+    aspect-ratio: 1/1;
+  }
+
+  .card {
+    margin-bottom: 2rem;
+  }
 }

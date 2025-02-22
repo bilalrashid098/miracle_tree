@@ -49,7 +49,7 @@ export default function Header() {
             ></path>
           </svg>
           <h1
-            className={`text-3xl font-bold mb-0 ml-3 transition-all duration-300  ${
+            className={`hidden md:block text-3xl font-bold mb-0 ml-3 transition-all duration-300  ${
               scrolled ? "translate-x-[-100%] opacity-0" : "translate-x-[0] opacity-100"
             }`}
           >

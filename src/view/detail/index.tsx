@@ -26,8 +26,8 @@ export default function PostDetailView({
           </svg>
         </div>
         <div className="max-w-6xl mx-auto p-6 w-full z-[2]">
-          <div className="text-8xl font-bold mb-6">POST</div>
-          <div className="text-4xl font-semibold text-[#ff4c00] mb-6">
+          <div className="text-6xl md:text-8xl font-bold mb-6">POST</div>
+          <div className="text-3xl md:text-4xl font-semibold text-[#ff4c00] mb-6">
             {post.title}
           </div>
         </div>

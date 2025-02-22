@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Post } from "@/types";
 import Card from "@/components/card";
+import Button from "@/components/button";
 
 import img1 from "@/public/1.jpg";
 import img2 from "@/public/2.jpg";
@@ -11,7 +12,7 @@ import img4 from "@/public/4.jpg";
 import img5 from "@/public/5.jpg";
 import img6 from "@/public/6.jpg";
 import img7 from "@/public/7.jpg";
-import Button from "@/components/button";
+import { isMobile } from "react-device-detect";
 
 export default function HomeView({ posts }: { posts: Post[] }) {
   const images = [img1, img2, img3, img4, img5, img6, img7];
@@ -42,33 +43,29 @@ export default function HomeView({ posts }: { posts: Post[] }) {
           </svg>
         </div>
         <div className="max-w-6xl mx-auto p-6 w-full z-[2]">
-          <div className="text-5xl font-semibold text-[#ff4c00] mb-6">
+          <div className="text-4xl md:text-5xl font-semibold text-[#ff4c00] mb-6">
             DEMO TEST
           </div>
-          <div className="text-8xl font-bold mb-6">
+          <div className="text-6xl md:text-8xl font-bold mb-6">
             THE MIRACLE <br /> TREE
           </div>
-          <div className="text-4xl font-semibold text-[#ff4c00]">
+          <div className="text-3xl md:text-4xl font-semibold text-[#ff4c00]">
             SYED BILAL RASHID
           </div>
         </div>
       </div>
       <div className="max-w-6xl mx-auto p-6">
         <h1 className="text-4xl font-bold pb-3 my-8">Blog Posts</h1>
-        <div className="flex flex-wrap w-full mx-[-0.5rem] w-[calc(100%+0.5rem)]">
+        <div className="flex flex-wrap w-full md:mx-[-0.5rem] md:w-[calc(100%+0.5rem)]">
           {posts.slice(0, visiblePosts).map((post, index: number) => {
             const imageSrc = images[index % images.length];
-            const fullView = Math.floor(index / 12) % 2 !== 0;
+            const fullView = !isMobile ? Math.floor(index / 12) % 2 !== 0 : false;
             return <Card post={post} image={imageSrc} fullView={fullView} />;
           })}
         </div>
         {visiblePosts < posts.length && (
           <div className="flex justify-center justify-center">
-            <Button
-              onClick={loadMore}
-            >
-              Load More
-            </Button>
+            <Button onClick={loadMore}>Load More</Button>
           </div>
         )}
       </div>

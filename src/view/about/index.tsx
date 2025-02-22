@@ -22,10 +22,10 @@ export default function AboutView() {
           </svg>
         </div>
         <div className="max-w-6xl mx-auto p-6 w-full z-[2]">
-          <div className="text-4xl font-semibold text-[#ff4c00] mb-6">
+          <div className="text-3xl md:text-4xl font-semibold text-[#ff4c00] mb-6">
             THE MIRACLE TREE
           </div>
-          <div className="text-8xl font-bold mb-6">ABOUT US</div>
+          <div className="text-6xl md:text-8xl font-bold mb-6">ABOUT US</div>
         </div>
       </div>
       <div className="max-w-6xl mx-auto p-6 py-[7rem]">
@@ -44,7 +44,7 @@ export default function AboutView() {
         <div className="mt-[7rem] flex flex-wrap">
           {data?.map((item: FeatureSectionProps, index: number) => {
             return (
-              <div className="w-1/4 px-2" key={index}>
+              <div className="w-full md:w-1/4 md:px-2" key={index}>
                 <FeatureSection item={item} />
               </div>
             );
