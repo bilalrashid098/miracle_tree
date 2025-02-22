@@ -8,14 +8,14 @@ export default function FeatureSection({
   item: FeatureSectionProps;
 }) {
   return (
-    <div className={`${styles.card} relative overflow-hidden`}>
+    <div className={`${styles.card}`}>
       <Image
         className={`${styles.cardImage}`}
         src={item.image}
         alt={item.title}
       />
-      <div className={`${styles.cardDetail} py-6 px-4`}>
-        <h2 className="text-2xl mb-3">{item.title}</h2>
+      <div className={`${styles.cardDetail}`}>
+        <h2 className="text-3xl mb-6">{item.title}</h2>
         <div>{item.description}</div>
       </div>
     </div>

@@ -18,3 +18,9 @@ export interface FeatureSectionProps {
   description: string;
   image: StaticImageData;
 }
+
+export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className"> {
+  href?: string;
+  className?: string;
+  children: ReactNode;
+}

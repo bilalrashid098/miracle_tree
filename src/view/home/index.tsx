@@ -1,8 +1,9 @@
-import { Post } from "@/types";
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-// Import images from the public folder
+import { useState } from "react";
+import { Post } from "@/types";
+import Card from "@/components/card";
+
 import img1 from "@/public/1.jpg";
 import img2 from "@/public/2.jpg";
 import img3 from "@/public/3.jpg";
@@ -10,10 +11,17 @@ import img4 from "@/public/4.jpg";
 import img5 from "@/public/5.jpg";
 import img6 from "@/public/6.jpg";
 import img7 from "@/public/7.jpg";
-import Card from "@/components/card";
+import Button from "@/components/button";
 
 export default function HomeView({ posts }: { posts: Post[] }) {
   const images = [img1, img2, img3, img4, img5, img6, img7];
+
+  const [visiblePosts, setVisiblePosts] = useState<number>(12);
+  const postsPerPage: number = 12;
+
+  const loadMore = () => {
+    setVisiblePosts((prev) => prev + postsPerPage);
+  };
 
   return (
     <div>
@@ -48,12 +56,21 @@ export default function HomeView({ posts }: { posts: Post[] }) {
       <div className="max-w-6xl mx-auto p-6">
         <h1 className="text-4xl font-bold pb-3 my-8">Blog Posts</h1>
         <div className="flex flex-wrap w-full mx-[-0.5rem] w-[calc(100%+0.5rem)]">
-          {posts.map((post, index: number) => {
+          {posts.slice(0, visiblePosts).map((post, index: number) => {
             const imageSrc = images[index % images.length];
             const fullView = Math.floor(index / 12) % 2 !== 0;
             return <Card post={post} image={imageSrc} fullView={fullView} />;
           })}
         </div>
+        {visiblePosts < posts.length && (
+          <div className="flex justify-center justify-center">
+            <Button
+              onClick={loadMore}
+            >
+              Load More
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );

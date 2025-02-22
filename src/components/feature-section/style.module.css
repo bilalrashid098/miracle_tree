@@ -1,11 +1,17 @@
 .card {
   position: relative;
+  overflow: hidden;
+}
+
+.card:hover .cardImage {
+    transform: scale(1.2);
 }
 
 .cardImage {
   position: relative;
   aspect-ratio: 3/5;
   object-fit: cover;
+  transition: all 0.3s ease-in-out;
 }
 
 .card::before {
@@ -15,7 +21,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #3510008f;
+  background-color: #1b09009a;
   z-index: 1;
 }
 
@@ -25,7 +31,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  padding: 1rem;
+  padding: 2rem 1rem;
   z-index: 2;
   color: #ffffff;
 }
