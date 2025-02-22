@@ -1,4 +1,5 @@
-import { Post } from "@/types";
+import { Post, User } from "@/types";
+import PostDetailView from "@/view/detail";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -19,31 +20,34 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
-    const res = await fetch(
+    const postRes = await fetch(
       `https://jsonplaceholder.typicode.com/posts/${params?.id}`
     );
 
-    if (!res.ok) {
+    if (!postRes.ok) {
       return { notFound: true };
     }
 
-    const post: Post = await res.json();
+    const post: Post = await postRes.json();
 
-    return { props: { post }, revalidate: 60 };
+    const userRes = await fetch(
+      `https://jsonplaceholder.typicode.com/users/${post.userId}`
+    );
+
+    if (!userRes.ok) {
+      return { props: { post }, revalidate: 60 };
+    }
+
+    const user: User = await userRes.json();
+    const postWithUser = { ...post, user };
+
+    return { props: { post: postWithUser }, revalidate: 60 };
   } catch (error) {
-    console.error("Error fetching post:", error);
+    console.error("Error fetching post or user data:", error);
     return { notFound: true };
   }
 };
 
-export default function PostDetail({ post }: { post: Post }) {
-  return (
-    <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-      <p className="text-gray-600">{post.body}</p>
-      <p className="text-sm text-gray-500 mt-4">
-        Post ID: {post.id} | Author: {post.userId}
-      </p>
-    </div>
-  );
+export default function PostDetail({ post }: { post: Post & { user: User } }) {
+  return <PostDetailView post={post} />;
 }

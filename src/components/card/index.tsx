@@ -19,7 +19,7 @@ export default function Card({ post, image, fullView }: CardProps) {
           alt={post.title}
         />
         <div className={`flex flex-col grow ${!fullView ? "p-6" : "py-6"}`}>
-          <h2 className="text-4xl font-bold heading mb-3">
+          <h2 className="text-4xl font-bold mb-3">
             <Link href={`/post/${post.id}`} className="capitalize hover:none">
               {post.title}
             </Link>
