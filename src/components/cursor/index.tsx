@@ -17,7 +17,7 @@ export default function CustomCursor() {
 
   return (
     <div
-      className={`lg:block hidden fixed top-0 left-0 pointer-events-none transition-transform duration-200 ease-out mix-blend-multiply ${
+      className={`lg:block hidden fixed top-0 left-0 pointer-events-none transition-transform duration-200 ease-out mix-blend-multiply z-[100] ${
         isHovering ? "scale-150 opacity-70" : "scale-100 opacity-100"
       }`}
       style={{

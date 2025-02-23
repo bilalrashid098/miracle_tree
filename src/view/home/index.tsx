@@ -73,14 +73,15 @@ export default function HomeView({ posts }: { posts: Post[] }) {
       </div>
       <div className="max-w-6xl mx-auto p-6">
         <h1 className="text-4xl font-bold pb-3 my-8">Blog Posts</h1>
-        <div className="mb-6">
+        <div className="mb-6 pr-2">
           <Select
             options={searchData}
             isMulti
+            isSearchable={false}
             placeholder="Search by keywords..."
             value={selectedKeywords}
             onChange={(selected: any) => setSelectedKeywords(selected)}
-            className="w-full"
+            className="w-full [&>div]:hover:border-[#ADADAD] [&>div]:shadow-none [&>div]:rounded-xl [&>div]:min-h-[50px] [&>div]:bg-[#ECECE9] [&>div]:border-2 [&>div]:border-[#ADADAD] [&_svg]:text-[#ADADAD] [&_div[class*='-multiValue']]:bg-[#d0d0d0] [&_div[class*='-multiValue']]:rounded-md] [&_div[class*='-menu']]:overflow-none]"
           />
         </div>
         <div className="flex flex-wrap w-full md:mx-[-0.5rem] md:w-[calc(100%+0.5rem)]">
