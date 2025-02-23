@@ -12,7 +12,6 @@ import img4 from "@/public/4.jpg";
 import img5 from "@/public/5.jpg";
 import img6 from "@/public/6.jpg";
 import img7 from "@/public/7.jpg";
-import { isMobile } from "react-device-detect";
 
 export default function HomeView({ posts }: { posts: Post[] }) {
   const images = [img1, img2, img3, img4, img5, img6, img7];
