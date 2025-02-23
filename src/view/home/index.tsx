@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Select from "react-select";
+import Select, { MultiValue } from "react-select";
 import Card from "@/components/card";
 import Button from "@/components/button";
 import { Post, SelectProps } from "@/types";
@@ -20,7 +20,9 @@ export default function HomeView({ posts }: { posts: Post[] }) {
   const postsPerPage: number = 12;
   const [visiblePosts, setVisiblePosts] = useState<number>(12);
   const [filterPosts, setFilterPosts] = useState<Post[]>(posts);
-  const [selectedKeywords, setSelectedKeywords] = useState<SelectProps[]>([]);
+  const [selectedKeywords, setSelectedKeywords] = useState<
+    MultiValue<SelectProps>
+  >([]);
 
   const loadMore = () => {
     setVisiblePosts((prev) => prev + postsPerPage);
@@ -80,7 +82,10 @@ export default function HomeView({ posts }: { posts: Post[] }) {
             isSearchable={false}
             placeholder="Search by keywords..."
             value={selectedKeywords}
-            onChange={(selected: any) => setSelectedKeywords(selected)}
+            onChange={(selected: MultiValue<SelectProps>) => {
+              console.log(selected);
+              setSelectedKeywords(selected);
+            }}
             className="w-full [&>div]:hover:border-[#ADADAD] [&>div]:shadow-none [&>div]:rounded-xl [&>div]:min-h-[50px] [&>div]:bg-[#ECECE9] [&>div]:border-2 [&>div]:border-[#ADADAD] [&_svg]:text-[#ADADAD] [&_div[class*='-multiValue']]:bg-[#d0d0d0] [&_div[class*='-multiValue']]:rounded-md] [&_div[class*='-menu']]:overflow-none]"
           />
         </div>
