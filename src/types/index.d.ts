@@ -55,3 +55,8 @@ export interface User {
   website: string;
   company: Company;
 }
+
+export interface SelectProps {
+  value: string;
+  label: string;
+}
