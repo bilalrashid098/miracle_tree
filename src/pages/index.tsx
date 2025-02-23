@@ -6,7 +6,11 @@ export async function getStaticProps() {
   const posts = await res.json();
 
   return {
-    props: { posts },
+    props: {
+      posts,
+      title: "Home",
+      description: "Home page description",
+    },
   };
 }
 

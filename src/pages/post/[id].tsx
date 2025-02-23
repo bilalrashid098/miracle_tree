@@ -41,7 +41,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const user: User = await userRes.json();
     const postWithUser = { ...post, user };
 
-    return { props: { post: postWithUser }, revalidate: 60 };
+    return {
+      props: {
+        post: postWithUser,
+        title: post.title,
+        description: "Detailed information for post detail page",
+      },
+      revalidate: 60,
+    };
   } catch (error) {
     console.error("Error fetching post or user data:", error);
     return { notFound: true };
